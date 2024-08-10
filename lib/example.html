@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const spellCheck = new Worker("./worker.js", { type: "module" });
+        spellCheck.onerror = (e) => console.error(e);
+        let isInitialized = false;
+        spellCheck.onmessage = (m) => {
+            if (m.data === "INITIALIZED") {
+                isInitialized = true;
+                console.log("[Spellchecker] INITIALIZED");
+                requestSpellcheck();
+                return;
+            }
+            console.log(m.data);
+        }
+
+        function requestSpellcheck() {
+            if (!isInitialized) return;
+
+            spellCheck.postMessage(["wods", "tooo", "chk"]);
+        }
+    </script>
+</body>
+
+</html>
