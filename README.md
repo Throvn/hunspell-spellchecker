@@ -3,11 +3,12 @@
 [![Build Status](https://travis-ci.org/GitbookIO/hunspell-spellchecker.png?branch=master)](https://travis-ci.org/GitbookIO/hunspell-spellchecker)
 [![NPM version](https://badge.fury.io/js/hunspell-spellchecker.svg)](http://badge.fury.io/js/hunspell-spellchecker)
 
-A lightweight spellchecker written in Javascript, it can be used in Node.JS and in the browser. It has been build to be pre-parse Hunspell dictionary to JSON.
+A lightweight spellchecker written in Javascript, it can be used ~~in Node.JS and~~ in **the browser**. It has been build to be pre-parse Hunspell dictionary to JSON.
 
 ### Installation
 
-> [!NOTE]
+> [!IMPORTANT]
+> This fork is only compatible in a browser environment by choice.
 > See in `lib/example.html` on how to use this library for a complete minimal example and with a Web Worker.
 
 ### API
